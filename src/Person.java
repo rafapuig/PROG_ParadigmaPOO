@@ -17,7 +17,7 @@ public class Person {
 
     // Se definen dos campos de instancia para la clase persona
     private String name;    // Variable (campo) de instancia name
-    private Gender gender;  // Variable (campo) de instancia gender
+    private final Gender gender;  // Variable (campo) de instancia gender
     // El valor conjunto de todos los campos
     // para una instancia concreta de tipo persona
     // en un momento dado del tiempo lo denominamos ESTADO
