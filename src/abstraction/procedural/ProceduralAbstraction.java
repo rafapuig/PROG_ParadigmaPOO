@@ -1,9 +1,9 @@
-package abstraction;
+package abstraction.procedural;
 
 import static java.io.IO.println;
 
 
-public class AbstractionByParameterization {
+public class ProceduralAbstraction {
 
     /**
      * Programa que suma todos los números enteros entre 10 y 20

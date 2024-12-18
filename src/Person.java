@@ -2,6 +2,10 @@
  * Una clase contiene la definición, los planos (blueprint), o plantilla
  * que indica al compilador que datos tiene y como se comportan
  * los objetos (instancias) de la clase definida
+ *
+ * Encapsula miembros (members)
+ * - de estado: campos (fields)
+ * - de comportamiento: métodos (methods)
   */
 public class Person {
     //Campos (estado):
