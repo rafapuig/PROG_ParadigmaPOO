@@ -9,7 +9,7 @@ public class CoercionPolymorfism {
 
     public static void main(String[] args) {
         int num = 12345;
-        double d1 = (double) num;
+        double d1 = (double) num; // Conversión explicita
 
         // Conversión de AMPLIACIÓN puede ser implícita en Java
         double d2 = num; // Conversion implícita (automática) - coerción

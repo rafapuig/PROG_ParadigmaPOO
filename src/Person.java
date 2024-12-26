@@ -72,8 +72,8 @@ public class Person {
     // en el momento de su creación (instanciación)
 
     // NOTA:
-    // Si ningún campo de un objeto puede cambiar después
-    // de asignarles su valor inicial,
-    // es decir, su estado inicial ya no se modifica
+    // Si ningún campo del objeto puede cambiar después
+    // de asignarle su valor inicial,
+    // es decir, el estado inicial del objeto ya no se modifica
     // diremos que el objeto es inmutable
 }
