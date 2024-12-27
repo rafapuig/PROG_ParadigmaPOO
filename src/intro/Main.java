@@ -1,6 +1,8 @@
 package intro;
 
 
+import static java.io.IO.println;
+
 public class Main {
 
     static void example1() {
@@ -114,6 +116,35 @@ public class Main {
         esther.greet(); // la variable esther contiene una referencia que apunta al objeto que tiene como nombre Amador
     }
 
+    static void example6() {
+        Person person = null;
+        // Podemos comprobar si una variable contiene una referencia nula (si la referencia asignada es null)
+        if( person == null) {
+             person = new Person();
+        }
+
+        // Si siempre comprobamos antes de acceder al objeto referenciado por la variable
+        // si verdaderamente la variable contiene una referencia a un objeto o contiene la referencia null
+        // Evitaremos que se produzca un error en tiempo de ejecución por intentar acceder a los miembros del objeto
+        // mediante una referencia nula
+        if(person != null) {
+            person.name = "Lorenzo Penco";
+            person.age = 45;
+            person.greet();
+        }
+
+        // Los errores en tiempo de ejecución en Java se denominan EXCEPCIONES
+        // Y son también al mismo tiempo objetos
+        // Concretamente si intentamos acceder a un miembro del objeto mediante una referencia nula
+        // se produce la excepción NullPointerException
+        person = null;
+        try {
+            person.greet();
+        } catch (NullPointerException e) {
+            println("ERROR de tipo " + e.getClass().getSimpleName() + " : " + e.getMessage());
+        }
+    }
+
 
     public static void main(String[] args) {
         example1();
@@ -121,6 +152,7 @@ public class Main {
         example3();
         example4();
         example5();
+        example6();
     }
 
 }
