@@ -26,6 +26,7 @@ public class Person {
     // para una instancia concreta de tipo persona
     // en un momento dado del tiempo lo denominamos ESTADO
 
+
     /**
      * Constructor, crea instancia de clase Persona
      * Para crear un objeto se necesitan los valores iniciales para los campos
