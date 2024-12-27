@@ -74,6 +74,8 @@ public class InclusionPolymorphism {
         Animal cat = new Cat("Tom");
         doAnimalMakeSound(cat);
 
-        testPoly();
+        testPoly1();
+        testPoly2();
+        testPoly3();
     }
 }
