@@ -26,22 +26,26 @@ class Person {
         this.name = name;
     }
 
-    void greet() {
-        System.out.println(name + ": " + greeting);
+    private String getSpeechBubble() {
+        return name + ": ";
+    }
+
+    public void greet() {
+        System.out.println(getSpeechBubble() + greeting);
     }
 
     void greetTo(Person greeted) {
         if (greeted == this || greeted == null) greet();
-        else System.out.println(name + ": " + greeting + " " + greeted.name);
+        else System.out.println(getSpeechBubble() + greeting + " " + greeted.name);
     }
 
     void introduce() {
-        System.out.println(name + ": " + greeting + ", me llamo " + name);
+        System.out.println(getSpeechBubble() + greeting + ", me llamo " + name);
     }
 
     void introduce(Person introduced) {
         if (introduced == this || introduced == null) introduce();
-        else System.out.println(name + ": " + "Te presento a " + introduced.name);
+        else System.out.println(getSpeechBubble() + "Te presento a " + introduced.name);
     }
 
     /* Métodos estáticos */
@@ -53,7 +57,7 @@ class Person {
     static void makeGreet(Person speaker) {
         String message = NO_SPEAKER;
         if (speaker != null)
-            message = speaker.name + ": " + greeting;
+            message = speaker.getSpeechBubble() + greeting;
         System.out.println(message);
         // o
         //if (speaker != null) speaker.greet();
@@ -65,7 +69,7 @@ class Person {
             return;
         }
         if (greeted == speaker || greeted == null) makeGreet(speaker);
-        else System.out.println(speaker.name + ": " + greeting + " " + greeted.name);
+        else System.out.println(speaker.getSpeechBubble() + greeting + " " + greeted.name);
         //o
         //if (speaker != null) speaker.greetTo(greeted);
     }
@@ -75,7 +79,7 @@ class Person {
             System.out.println(NO_SPEAKER);
             return;
         }
-        System.out.println(speaker.name + ": " + greeting + ", me llamo " + speaker.name);
+        System.out.println(speaker.getSpeechBubble() + greeting + ", me llamo " + speaker.name);
         // o
         //if (speaker != null) speaker.introduce();
     }
@@ -88,7 +92,7 @@ class Person {
         if (introduced == speaker || introduced == null)
             makeIntroduce(speaker);
         else
-            System.out.println(speaker.name + ": " + greeting + " " + introduced.name);
+            System.out.println(speaker.getSpeechBubble() + greeting + " " + introduced.name);
 
     }
 
@@ -96,6 +100,9 @@ class Person {
         // Delegando en el método de instancia
         if (speaker != null) speaker.introduce(introduced);
     }
+
+    static void printMessage(Person speaker,
+                             String message) {}
 
 }
 
