@@ -6,8 +6,10 @@ package classes;
 /* La referencia sirve para controlar y manipular el objeto referenciado */
 public class Human {
 
+    // Campo de clase o estático (la única copia de esta variable pertenece directamente a la propia clase)
     static long count = 0;
 
+    // Campos de instancia (cada objeto tiene su propio juego de campos name y age)
     String name;
     int age;
 }
