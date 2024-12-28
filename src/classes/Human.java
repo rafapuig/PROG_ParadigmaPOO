@@ -18,7 +18,7 @@ class HumanDemo {
     public static void main(String[] args) {
 
         Human perico;   // Variable para guardar la referencia de tipo Human
-        perico = new Human();
+        perico = new Human(); // El operador new crea una nueva instancia de clase Human y devuelve la referencia a esta
 
         // Acceso a los campos de instancia de un objeto mediante el operador punto
         // Usamos una variable que contenga una referencia al objeto a cuyos miembros queremos acceder
