@@ -2,9 +2,24 @@ package members;
 
 class Person {
 
+    /**
+     * Campo estático con el texto para saludar que usan los objetos persona
+     * Existe solamente una copia de esta variable
+     * Pertenece a la propia clase y es compartida por todos los objetos de la clase
+     */
     private static String greeting = "Hola";
+
+    /**
+     * Campo estático con el texto a mostrar cuando no hay objeto hablante
+     * Su valor es constante (final)
+      */
     private static final String NO_SPEAKER = "No hay hablante";
 
+    /**
+     * Campo de instancia name
+     * Cada objeto tiene su propia version o copia de este campo
+     * para mantener su estado. Cada objeto tiene su propio nombre
+     */
     String name;
 
     public Person(String name) {
@@ -70,10 +85,16 @@ class Person {
             System.out.println(NO_SPEAKER);
             return;
         }
-        if (introduced == speaker || introduced == null) makeIntroduce(speaker);
-        else System.out.println(speaker.name + ": " + greeting + " " + introduced.name);
-        // o
-        //if (speaker != null) speaker.introduce(introduced);
+        if (introduced == speaker || introduced == null)
+            makeIntroduce(speaker);
+        else
+            System.out.println(speaker.name + ": " + greeting + " " + introduced.name);
+
+    }
+
+    static void makeIntroduce_v2(Person speaker, Person introduced) {
+        // Delegando en el método de instancia
+        if (speaker != null) speaker.introduce(introduced);
     }
 
 }
