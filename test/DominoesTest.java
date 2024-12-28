@@ -69,4 +69,25 @@ public class DominoesTest {
         assertTrue(dominoes1.equals(dominoes1));
     }
 
+    @Test
+    public void testDominoesToString() {
+
+        String texto = "Hola mundo";
+        System.out.println(texto.substring(0, Math.min(2, texto.length())));
+        System.out.println(texto.substring(texto.length() - Math.min(texto.length(), 2), texto.length()));
+
+        texto.replace('a', Character.toUpperCase('a'));
+
+
+        String inversa = new StringBuilder(texto).reverse().toString();
+
+        System.out.println(inversa);
+
+        int j = 6;
+        Integer a = Integer.valueOf(j); // Boxing de j
+        int i = a.intValue(); // Unboxing
+
+
+    }
+
 }

@@ -143,6 +143,7 @@ public class Main {
         } catch (NullPointerException e) {
             println("ERROR de tipo " + e.getClass().getSimpleName() + " : " + e.getMessage());
         }
+
     }
 
 

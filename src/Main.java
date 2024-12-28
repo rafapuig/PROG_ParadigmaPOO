@@ -29,4 +29,31 @@ void main() {
 
     // Y su genero
     println(esther.getGender());
+
+
+
+
+
+
+
+
+
+
+    String texto = "Hola mundo";
+
+    /*int len = texto.length();
+
+    int max = 5;
+
+    int min = len < max ? len : max;
+
+    String resultado = texto.substring(0, min);*/
+
+    //texto.substring(0, texto.length() < 2 ? texto.length() : 2);
+
+    //System.out.println(resultado);
+
+
+
+
 }
