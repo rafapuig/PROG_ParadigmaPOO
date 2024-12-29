@@ -72,7 +72,19 @@ public class DominoesTest {
     @Test
     public void testDominoesToString() {
 
-        String texto = "Hola mundo";
+        // Given
+        Dominoes dominoes = new Dominoes(5, 3);
+
+        // When
+        String text = dominoes.toString();
+
+        System.out.println(dominoes);
+
+        // Then
+        assertEquals("[5:3]", text);
+
+
+        /*String texto = "Hola mundo";
         System.out.println(texto.substring(0, Math.min(2, texto.length())));
         System.out.println(texto.substring(texto.length() - Math.min(texto.length(), 2), texto.length()));
 
@@ -85,7 +97,7 @@ public class DominoesTest {
 
         int j = 6;
         Integer a = Integer.valueOf(j); // Boxing de j
-        int i = a.intValue(); // Unboxing
+        int i = a.intValue(); // Unboxing*/
 
 
     }

@@ -12,7 +12,7 @@ class Person {
     /**
      * Campo estático con el texto a mostrar cuando no hay objeto hablante
      * Su valor es constante (final)
-      */
+     */
     private static final String NO_SPEAKER = "No hay hablante";
 
     /**
@@ -30,79 +30,85 @@ class Person {
         return name + ": ";
     }
 
+    private void printMessage(String message) {
+        System.out.println(getSpeechBubble() + message);
+    }
+
+
     public void greet() {
-        System.out.println(getSpeechBubble() + greeting);
+        printMessage(greeting);
     }
 
     void greetTo(Person greeted) {
-        if (greeted == this || greeted == null) greet();
-        else System.out.println(getSpeechBubble() + greeting + " " + greeted.name);
+        if (greeted == this || greeted == null) {
+            greet();
+        } else {
+            printMessage(greeting + " " + greeted.name);
+        }
     }
 
     void introduce() {
-        System.out.println(getSpeechBubble() + greeting + ", me llamo " + name);
+        printMessage(greeting + ", me llamo " + name);
     }
 
     void introduce(Person introduced) {
         if (introduced == this || introduced == null) introduce();
-        else System.out.println(getSpeechBubble() + "Te presento a " + introduced.name);
+        else printMessage("Te presento a " + introduced.name);
     }
 
+
     /* Métodos estáticos */
+
+    private static void printMessage(Person speaker, String message) {
+        if (speaker == null) {
+            System.out.println(NO_SPEAKER);
+            return;
+        }
+        speaker.printMessage(message);
+    }
 
     static void setGreeting(String newGreeting) {
         greeting = newGreeting;
     }
 
     static void makeGreet(Person speaker) {
-        String message = NO_SPEAKER;
-        if (speaker != null)
-            message = speaker.getSpeechBubble() + greeting;
-        System.out.println(message);
-        // o
-        //if (speaker != null) speaker.greet();
+        String message = greeting;
+        printMessage(speaker, message);
     }
 
     static void makeGreetTo(Person speaker, Person greeted) {
-        if (speaker == null) {
-            System.out.println(NO_SPEAKER);
+        if (greeted == speaker || greeted == null) {
+            makeGreet(speaker);
             return;
         }
-        if (greeted == speaker || greeted == null) makeGreet(speaker);
-        else System.out.println(speaker.getSpeechBubble() + greeting + " " + greeted.name);
-        //o
-        //if (speaker != null) speaker.greetTo(greeted);
+        String message = greeting + " " + greeted.name;
+        printMessage(speaker, message);
+    }
+
+    static void makeGreetTo_v2(Person speaker, Person greeted) {
+        if(speaker != null) speaker.greetTo(greeted);
+        else System.out.println(NO_SPEAKER);
     }
 
     static void makeIntroduce(Person speaker) {
-        if (speaker == null) {
-            System.out.println(NO_SPEAKER);
-            return;
-        }
-        System.out.println(speaker.getSpeechBubble() + greeting + ", me llamo " + speaker.name);
-        // o
-        //if (speaker != null) speaker.introduce();
+        if (speaker != null) speaker.introduce();
+        else System.out.println(NO_SPEAKER);
     }
 
     static void makeIntroduce(Person speaker, Person introduced) {
-        if (speaker == null) {
-            System.out.println(NO_SPEAKER);
+        if (introduced == speaker || introduced == null) {
+            makeIntroduce(speaker);
             return;
         }
-        if (introduced == speaker || introduced == null)
-            makeIntroduce(speaker);
-        else
-            System.out.println(speaker.getSpeechBubble() + greeting + " " + introduced.name);
-
+        String message = "Te presento a " + introduced.name;
+        printMessage(speaker, message);
     }
 
     static void makeIntroduce_v2(Person speaker, Person introduced) {
         // Delegando en el método de instancia
         if (speaker != null) speaker.introduce(introduced);
+        else System.out.println(NO_SPEAKER);
     }
-
-    static void printMessage(Person speaker,
-                             String message) {}
 
 }
 
@@ -141,9 +147,9 @@ public class MembersDemo {
         Person.makeIntroduce(belen);
         Person.makeIntroduce(lorenzo, belen);
         Person.makeIntroduce(belen, lorenzo);
-        Person.makeIntroduce(lorenzo,lorenzo);
-        Person.makeIntroduce(belen,null);
-        Person.makeIntroduce(null,null);
+        Person.makeIntroduce(lorenzo, lorenzo);
+        Person.makeIntroduce(belen, null);
+        Person.makeIntroduce(null, null);
     }
 
 

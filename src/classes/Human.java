@@ -4,13 +4,19 @@ package classes;
 // Define un nuevo tipo de datos (referencias)
 /* Se podrán crear variables de tipo Human que almacenarán una referencia de tipo Human */
 /* La referencia sirve para controlar y manipular el objeto referenciado */
+
+// Para poder acceder a una clase en otros paquetes además del paquete en que fue declarada
+// tenemos que modificar el nivel de acceso mediante el modificador public
+// La ausencia de modificador de acceso (equivale a acceso a nivel de paquete) solo permitirá usar
+// la clase Human a otras clases que pertenezcan al mismo paquete que la clase (por ejemplo, HumanDemo)
+// -- Prueba a borrar el modificador de acceso public y verás que HumanDemo todavía puede acceder a Human
 public class Human {
 
     // Campo de clase o estático (la única copia de esta variable pertenece directamente a la propia clase)
     static long count = 0;
 
     // Campos de instancia (cada objeto tiene su propio juego de campos name y age)
-    String name;
+    public String name;
     int age;
 }
 
