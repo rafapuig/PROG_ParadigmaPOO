@@ -31,4 +31,5 @@ public class FactoryDemo {
         System.out.println(perico.getName());
         System.out.println(perico.getAge());
     }
+
 }
