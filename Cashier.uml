@@ -3,12 +3,12 @@
   <ID>JAVA</ID>
   <OriginalElement>inheritance.Cashier</OriginalElement>
   <nodes>
-    <node x="-169.5" y="-226.0">inheritance.Employee</node>
     <node x="-205.25" y="-294.0">inheritance.Person</node>
-    <node x="-319.5" y="-158.0">inheritance.Programmer</node>
     <node x="-134.5" y="-158.0">inheritance.Clerk</node>
     <node x="-412.0" y="-226.0">inheritance.Customer</node>
+    <node x="-319.5" y="-158.0">inheritance.Programmer</node>
     <node x="-3.5" y="-158.0">inheritance.Cashier</node>
+    <node x="-169.5" y="-226.0">inheritance.Employee</node>
   </nodes>
   <notes />
   <edges>
@@ -43,15 +43,8 @@
       <point x="0.0" y="0.0" />
     </edge>
   </edges>
-  <settings layout="Generic" zoom="1.5" showDependencies="false" x="-143.00000000000006" y="-201.99999999999994" />
-  <SelectedNodes>
-    <node>inheritance.Employee</node>
-    <node>inheritance.Cashier</node>
-    <node>inheritance.Person</node>
-    <node>inheritance.Programmer</node>
-    <node>inheritance.Clerk</node>
-    <node>inheritance.Customer</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic" zoom="1.5" showDependencies="false" x="-0.8333333333332575" y="-99.66666666666669" />
+  <SelectedNodes />
   <Categories />
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
