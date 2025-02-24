@@ -1,11 +1,11 @@
-package exercises.dominoes.quieesquien;
+package exercises.quieesquien;
 
-import static exercises.dominoes.quieesquien.Character.Gender.*;
-import static exercises.dominoes.quieesquien.Character.*;
-import static exercises.dominoes.quieesquien.Character.HairColor.BROWN;
-import static exercises.dominoes.quieesquien.Character.HairColor.RED;
-import static exercises.dominoes.quieesquien.Character.HairStyle.*;
-import static exercises.dominoes.quieesquien.Character.SkinColor.*;
+import static exercises.quieesquien.Character.Gender.*;
+import static exercises.quieesquien.Character.*;
+import static exercises.quieesquien.Character.HairColor.BROWN;
+import static exercises.quieesquien.Character.HairColor.RED;
+import static exercises.quieesquien.Character.HairStyle.*;
+import static exercises.quieesquien.Character.SkinColor.*;
 
 class Character {
     public enum Gender {MALE, FEMALE}
@@ -185,6 +185,19 @@ class Character {
                     hasMoustache, wearGlasses, hasBraids, hasPonytails);
         }
 
+    }
+
+}
+
+
+
+class Director {
+
+    Character makePaco() {
+        return new Character.Builder("Paco", MALE)
+                .setHairColor(BROWN)
+                .hasBeard()
+                .build();
     }
 
 }
