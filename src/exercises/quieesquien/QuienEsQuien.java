@@ -16,6 +16,8 @@ class Character {
 
     public enum SkinColor {WHITE, BLACK}
 
+    public enum Glasses {NONE, SUNGLASSES, GRADUATED}
+
     String name;
     Gender gender;
     SkinColor skinColor;

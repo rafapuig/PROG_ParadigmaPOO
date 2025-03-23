@@ -2,28 +2,28 @@ package exercises.personalnames;
 
 public class Name {
 
-    private String firstname;
-    private String lastname;
+    private final String firstName;
+    private final String lastName;
 
     //String[] surnames = new String[2];
 
-    private String fatherSurname;
-    private String motherSurname;
+    private final String fatherSurname;
+    private final String motherSurname;
 
 
-    private Name(String firstname, String lastname, String fatherSurname, String motherSurname) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    private Name(String firstName, String lastName, String fatherSurname, String motherSurname) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.fatherSurname = fatherSurname;
         this.motherSurname = motherSurname;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
     public String getFatherSurname() {
@@ -46,12 +46,12 @@ public class Name {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(); //Fabricante de objetos String
-        if (hasContent(firstname)) {
-            sb.append(firstname);
+        if (hasContent(firstName)) {
+            sb.append(firstName);
             sb.append(" ");
         }
-        if (hasContent(lastname)) {
-            sb.append(lastname);
+        if (hasContent(lastName)) {
+            sb.append(lastName);
             sb.append(" ");
         }
         if (hasContent(fatherSurname)) {
@@ -70,36 +70,37 @@ public class Name {
         return sb.toString(); // Fabricar y devolver el String
     }
 
+
     static class Builder {
 
-        private String firstname;
-        private String lastname;
+        private String firstName;
+        private String lastName;
         private String fatherSurname;
         private String motherSurname;
 
-        public Builder withFirstname(String firstname) {
-            this.firstname = firstname;
+        public Builder firstName(String firstName) {
+            this.firstName = firstName;
             return this;
         }
 
-        public Builder withLastname(String lastname) {
-            this.lastname = lastname;
+        public Builder lastName(String lastName) {
+            this.lastName = lastName;
             return this;
         }
 
-        public Builder withFatherSurname(String fatherSurname) {
+        public Builder fatherSurname(String fatherSurname) {
             this.fatherSurname = fatherSurname;
             return this;
         }
 
-        public Builder withMotherSurname(String motherSurname) {
+        public Builder motherSurname(String motherSurname) {
             this.motherSurname = motherSurname;
             return this;
         }
 
         // Método factoría, fabrica el objeto producto: Name
         Name build() {
-            return new Name(firstname, lastname, fatherSurname, motherSurname);
+            return new Name(firstName, lastName, fatherSurname, motherSurname);
         }
     }
 

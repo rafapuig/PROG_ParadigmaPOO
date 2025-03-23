@@ -21,7 +21,7 @@ public class Person {
 
     // En esta versión para almacenar la información de los apellidos
     // usaremos un array de dos elementos
-    private String[] apellidos = new String[2];
+    private final String[] apellidos = new String[2];
 
     private final Gender gender;  // Campo de instancia gender
 
